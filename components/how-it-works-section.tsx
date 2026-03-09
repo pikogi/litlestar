@@ -9,7 +9,7 @@ const steps = [
   },
   {
     number: "02",
-    title: "Conoce a la profesora",
+    title: "Conoce a tus profesores",
     description: "Tu hijo tendrá una clase de prueba donde evaluamos su nivel y le mostramos lo divertido que es aprender inglés.",
   },
   {

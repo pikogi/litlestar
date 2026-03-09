@@ -27,7 +27,7 @@ export function CTASection() {
               La primera clase es gratis. Dale a tu hijo la oportunidad de brillar.
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/80 text-pretty">
-              Reserva una clase de prueba sin compromiso. Conoce a la profesora,
+              Reserva una clase de prueba sin compromiso. Conoce a los profesores,
               ve cómo tu hijo disfruta aprendiendo y decide después.
             </p>
 
