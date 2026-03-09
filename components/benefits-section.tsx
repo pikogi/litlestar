@@ -57,7 +57,7 @@ export function BenefitsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <Reveal key={benefit.title} delay={index * 80}>
-              <div className="bg-card rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow h-full">
+              <div className="bg-card rounded-2xl p-6 border border-border hover:shadow-lg transition-shadow h-full flex flex-col items-center text-center">
                 <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
                   <benefit.icon className="w-6 h-6 text-primary" />
                 </div>
