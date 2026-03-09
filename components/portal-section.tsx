@@ -32,14 +32,14 @@ export function PortalSection() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Image */}
           <Reveal direction="left" className="flex-1 order-2 lg:order-1">
-            <div className="relative mx-auto max-w-xl">
+            <div className="relative mx-auto w-full lg:max-w-xl">
               {/* Monitor frame */}
-              <div className="relative rounded-[2.25rem] bg-foreground p-3 shadow-2xl border-4 border-primary/20">
+              <div className="relative rounded-[1.25rem] lg:rounded-[2.25rem] bg-foreground p-1.5 lg:p-3 shadow-2xl border-2 lg:border-4 border-primary/20">
                 <div
                   className="absolute left-1/2 top-3 -translate-x-1/2 h-2 w-2 rounded-full bg-background/30"
                   aria-hidden="true"
                 />
-                <div className="rounded-[1.75rem] overflow-hidden bg-background">
+                <div className="rounded-[0.75rem] lg:rounded-[1.75rem] overflow-hidden bg-background">
                   <div className="relative aspect-[16/10]">
                     <Image
                       src="/images/portal-preview.png"
@@ -59,7 +59,7 @@ export function PortalSection() {
           </Reveal>
 
           {/* Content */}
-          <Reveal direction="right" className="flex-1 order-1 lg:order-2">
+          <Reveal direction="right" className="flex-1 order-1 lg:order-2 text-center lg:text-left">
             <span className="text-sm font-bold text-primary uppercase tracking-wider">
               Portal del alumno
             </span>
@@ -71,7 +71,7 @@ export function PortalSection() {
             </p>
 
             {/* Feature list */}
-            <div className="mt-8 flex flex-col gap-5">
+            <div className="mt-8 flex flex-col gap-5 text-left">
               {features.map((feature, index) => (
                 <Reveal key={feature.title} delay={index * 80}>
                   <div className="flex items-start gap-4">

@@ -181,7 +181,7 @@ export function PricingSection() {
             </div>
             <div className="text-center md:text-left flex-1">
               <h3 className="text-lg font-bold text-foreground">
-                Descuento para 2 hermanos: 20% OFF
+                Descuento para 2 hermanos: <br className="sm:hidden" />20% OFF
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
                 Si inscribes a 2 hijos, obtienes un 20% de descuento en el plan cuatrimestral.

@@ -25,7 +25,7 @@ const benefits = [
   {
     icon: Headphones,
     title: "Profesores certificados",
-    description: "Docentes nativos y bilingües con experiencia en educación infantil y certificaciones internacionales.",
+    description: "Docentes bilingües con experiencia en educación infantil y certificaciones internacionales.",
   },
   {
     icon: Shield,
