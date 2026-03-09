@@ -1,6 +1,7 @@
 import { Star, Users, Clock, Monitor } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 export function HeroSection() {
   return (
@@ -14,7 +15,7 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Text content */}
-          <div className="flex-1 text-center lg:text-left">
+          <Reveal direction="left" className="flex-1 text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/30 mb-6">
               <Star className="w-4 h-4 text-accent-foreground" fill="currentColor" />
@@ -84,10 +85,10 @@ export function HeroSection() {
             <p className="mt-6 text-sm text-muted-foreground">
               Garantía de devolución de 30 días. Sin compromisos.
             </p>
-          </div>
+          </Reveal>
 
           {/* Hero image */}
-          <div className="flex-1 relative">
+          <Reveal direction="right" className="flex-1 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/30">
               <Image
                 src="/images/hero-kids.jpg"
@@ -118,7 +119,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

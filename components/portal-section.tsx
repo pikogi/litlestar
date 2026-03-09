@@ -1,6 +1,6 @@
-import { Play, Music, PenTool, BookOpen, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Play, Music, PenTool, BookOpen } from "lucide-react"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 const features = [
   {
@@ -31,7 +31,7 @@ export function PortalSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Image */}
-          <div className="flex-1 order-2 lg:order-1">
+          <Reveal direction="left" className="flex-1 order-2 lg:order-1">
             <div className="relative mx-auto max-w-xl">
               {/* Monitor frame */}
               <div className="relative rounded-[2.25rem] bg-foreground p-3 shadow-2xl border-4 border-primary/20">
@@ -56,10 +56,10 @@ export function PortalSection() {
               <div className="mx-auto mt-3 h-3 w-40 rounded-b-2xl bg-foreground/90 shadow-lg" aria-hidden="true" />
               <div className="mx-auto h-6 w-56 rounded-b-3xl bg-foreground/80" aria-hidden="true" />
             </div>
-          </div>
+          </Reveal>
 
           {/* Content */}
-          <div className="flex-1 order-1 lg:order-2">
+          <Reveal direction="right" className="flex-1 order-1 lg:order-2">
             <span className="text-sm font-bold text-primary uppercase tracking-wider">
               Portal del alumno
             </span>
@@ -72,19 +72,21 @@ export function PortalSection() {
 
             {/* Feature list */}
             <div className="mt-8 flex flex-col gap-5">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/30 shrink-0">
-                    <feature.icon className="w-5 h-5 text-accent-foreground" />
+              {features.map((feature, index) => (
+                <Reveal key={feature.title} delay={index * 80}>
+                  <div className="flex items-start gap-4">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/30 shrink-0">
+                      <feature.icon className="w-5 h-5 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { Check, Star, Shield, Users, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/reveal"
 
 const includedBase = [
   "Clases en vivo de 50 minutos",
@@ -34,6 +35,7 @@ export function PricingSection() {
     <section id="precios" className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header */}
+        <Reveal>
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-sm font-bold text-primary uppercase tracking-wider">
             Precios
@@ -45,11 +47,13 @@ export function PricingSection() {
             Elige el plan que mejor se adapte a tu familia. Todos los planes incluyen acceso completo al portal educativo.
           </p>
         </div>
+        </Reveal>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Quarterly Plan */}
-          <div className="relative bg-card rounded-3xl border-2 border-primary shadow-xl p-8 flex flex-col">
+          <Reveal delay={0} className="flex">
+          <div className="relative bg-card rounded-3xl border-2 border-primary shadow-xl p-8 flex flex-col w-full">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold">
                 <Star className="w-4 h-4" fill="currentColor" />
@@ -90,9 +94,11 @@ export function PricingSection() {
               </a>
             </Button>
           </div>
+          </Reveal>
 
           {/* Monthly Plan */}
-          <div className="bg-card rounded-3xl border border-border p-8 flex flex-col">
+          <Reveal delay={100} className="flex">
+          <div className="bg-card rounded-3xl border border-border p-8 flex flex-col w-full">
             <div className="text-center">
               <h3 className="text-xl font-bold text-foreground">Plan Mensual</h3>
               <p className="text-sm text-muted-foreground mt-1">Pago mes a mes, sin compromiso</p>
@@ -123,9 +129,11 @@ export function PricingSection() {
               </a>
             </Button>
           </div>
+          </Reveal>
 
           {/* Custom Plan */}
-          <div className="relative bg-card rounded-3xl border-2 border-accent/60 p-8 flex flex-col">
+          <Reveal delay={200} className="flex">
+          <div className="relative bg-card rounded-3xl border-2 border-accent/60 p-8 flex flex-col w-full">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-bold">
                 <Sparkles className="w-4 h-4" />
@@ -162,6 +170,7 @@ export function PricingSection() {
               </a>
             </Button>
           </div>
+          </Reveal>
         </div>
 
         {/* Discount banner */}
@@ -175,7 +184,7 @@ export function PricingSection() {
                 Descuento para 2 hermanos: 20% OFF
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Si inscribes a 2 hijos, obtienes un 20% de descuento en ambas membresias.
+                Si inscribes a 2 hijos, obtienes un 20% de descuento en el plan cuatrimestral.
               </p>
             </div>
           </div>

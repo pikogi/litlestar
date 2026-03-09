@@ -36,7 +36,7 @@ const testimonials = [
     name: "Diana Lopez",
     location: "Ecuador",
     rating: 5,
-    text: "Llevamos 6 meses con Little Star y el progreso de mi hijo es impresionante. Puede mantener conversaciones simples en inglés y le encanta ver los videos del portal. El plan trimestral es muy conveniente.",
+    text: "Llevamos 6 meses con Little Star y el progreso de mi hijo es impresionante. Puede mantener conversaciones simples en inglés y le encanta ver los videos del portal. El plan cuatrimestral es muy conveniente.",
   },
 ]
 

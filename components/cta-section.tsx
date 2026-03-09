@@ -1,6 +1,7 @@
 import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Reveal } from "@/components/reveal"
 
 export function CTASection() {
   return (
@@ -8,7 +9,7 @@ export function CTASection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Image */}
-          <div className="flex-1">
+          <Reveal direction="left" className="flex-1">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto lg:mx-0">
               <Image
                 src="/images/kid-laptop.jpg"
@@ -18,15 +19,15 @@ export function CTASection() {
                 className="w-full h-auto object-cover"
               />
             </div>
-          </div>
+          </Reveal>
 
           {/* Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <Reveal direction="right" className="flex-1 text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground text-balance">
               La primera clase es gratis. Dale a tu hijo la oportunidad de brillar.
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/80 text-pretty">
-              Reserva una clase de prueba sin compromiso. Conoce a la profesora, 
+              Reserva una clase de prueba sin compromiso. Conoce a la profesora,
               ve cómo tu hijo disfruta aprendiendo y decide después.
             </p>
 
@@ -48,7 +49,7 @@ export function CTASection() {
                 <span className="text-sm font-semibold">Garantía 30 días</span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Reveal } from "@/components/reveal"
 
 const faqs = [
   {
@@ -14,7 +15,7 @@ const faqs = [
   },
   {
     question: "¿Cuántos niños hay por clase?",
-    answer: "Cada clase tiene un máximo de 5 alumnos. Esto garantiza que cada niño reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
+    answer: "Cada clase tiene un máximo de 4 alumnos. Esto garantiza que cada niño reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
   },
   {
     question: "¿Cuánto dura cada clase?",
@@ -26,11 +27,11 @@ const faqs = [
   },
   {
     question: "¿Cuál es la diferencia entre el plan cuatrimestral y el mensual?",
-    answer: "El plan cuatrimestral tiene un costo de $60.000 por mes (4 meses pagados juntos por $240.000), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $80.000.",
+    answer: "El plan cuatrimestral tiene un costo de $60.000 por mes (4 meses pagados juntos por $240.000), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan cuatrimestral te permite ahorrar $80.000.",
   },
   {
     question: "¿Qué pasa si inscribo a 2 hijos?",
-    answer: "Si inscribes a 2 hermanos, obtienes un 20% de descuento en ambas membresías. El descuento aplica para cualquier plan (mensual o cuatrimestral).",
+    answer: "Si inscribes a 2 hermanos, obtienes un 20% de descuento en ambas membresías. El descuento aplica para plan cuatrimestral.",
   },
   {
     question: "¿Cómo funciona la garantía de 30 días?",
@@ -55,6 +56,7 @@ export function FAQSection() {
     <section id="faq" className="pb-16 lg:pb-24 pt-6 lg:pt-8">
       <div className="mx-auto max-w-3xl px-4 lg:px-8">
         {/* Header */}
+        <Reveal>
         <div className="text-center mb-14">
           <span className="text-sm font-bold text-primary uppercase tracking-wider">
             Preguntas frecuentes
@@ -66,8 +68,10 @@ export function FAQSection() {
             Todo lo que necesitas saber antes de inscribir a tu hijo.
           </p>
         </div>
+        </Reveal>
 
         {/* FAQ Accordion */}
+        <Reveal delay={100}>
         <Accordion type="single" collapsible className="flex flex-col gap-3">
           {faqs.map((faq, index) => (
             <AccordionItem
@@ -84,6 +88,7 @@ export function FAQSection() {
             </AccordionItem>
           ))}
         </Accordion>
+        </Reveal>
       </div>
     </section>
   )
