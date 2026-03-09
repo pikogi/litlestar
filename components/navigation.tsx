@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Star, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const WA_GENERIC = `https://wa.me/5493543573905?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`
+
 const navLinks = [
   { label: "Beneficios", href: "#beneficios" },
   { label: "Como funciona", href: "#como-funciona" },
@@ -33,7 +35,7 @@ export function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-semibold text-muted-foreground hover:text-primary transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -44,7 +46,7 @@ export function Navigation() {
         <div className="hidden lg:flex items-center gap-3">
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <a
-              href="https://wa.me/5493543573905?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa"
+              href={WA_GENERIC}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -80,7 +82,7 @@ export function Navigation() {
             <div className="flex flex-col gap-2 pt-3 border-t border-border">
               <Button className="bg-primary text-primary-foreground" asChild>
                 <a
-                  href="https://wa.me/5493543573905?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa"
+                  href={WA_GENERIC}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

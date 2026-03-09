@@ -1,4 +1,4 @@
-import { Star, Shield } from "lucide-react"
+import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -9,12 +9,12 @@ export function CTASection() {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Image */}
           <div className="flex-1">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl max-w-sm mx-auto lg:mx-0">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto lg:mx-0">
               <Image
                 src="/images/kid-laptop.jpg"
                 alt="Niño feliz aprendiendo inglés con Little Star"
-                width={480}
-                height={360}
+                width={640}
+                height={480}
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -33,7 +33,7 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-8 py-6 rounded-xl text-base shadow-lg" asChild>
                 <a
-                  href="https://wa.me/5493543573905?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa"
+                  href={`https://wa.me/5493543573905?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -46,10 +46,6 @@ export function CTASection() {
               <div className="flex items-center gap-2 text-primary-foreground/70">
                 <Shield className="w-4 h-4" />
                 <span className="text-sm font-semibold">Garantía 30 días</span>
-              </div>
-              <div className="flex items-center gap-2 text-primary-foreground/70">
-          
-            
               </div>
             </div>
           </div>

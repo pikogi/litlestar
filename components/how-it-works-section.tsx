@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, ArrowRight } from "lucide-react"
 
 const steps = [
   {
@@ -41,14 +41,10 @@ export function HowItWorksSection() {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row items-start gap-4">
           {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-border -translate-x-1/2" aria-hidden="true" />
-              )}
-              <div className="relative flex flex-col items-center text-center">
+            <div key={step.number} className="flex lg:flex-row items-start gap-4 flex-1 w-full lg:w-auto">
+              <div className="flex flex-col items-center text-center flex-1">
                 <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-accent/30 mb-5">
                   <span className="text-2xl font-extrabold text-accent-foreground">
                     {step.number}
@@ -57,6 +53,9 @@ export function HowItWorksSection() {
                 <h3 className="text-lg font-bold text-foreground mb-2">{step.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
+              {index < steps.length - 1 && (
+                <ArrowRight className="hidden lg:block w-6 h-6 text-primary flex-shrink-0 mt-10" aria-hidden="true" />
+              )}
             </div>
           ))}
         </div>

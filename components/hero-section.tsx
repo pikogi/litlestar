@@ -68,7 +68,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-10 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-6 rounded-xl shadow-lg" asChild>
                 <a
-                  href="https://wa.me/5493543573905?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa"
+                  href={`https://wa.me/5493543573905?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
