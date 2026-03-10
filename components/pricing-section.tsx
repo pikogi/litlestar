@@ -93,7 +93,7 @@ export function PricingSection() {
                 Elegir plan trimestral
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground text-center mt-3">Comenzamos las clases en Abril.</p>
+            <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
           </Reveal>
 
@@ -129,7 +129,7 @@ export function PricingSection() {
                 Elegir plan mensual
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground text-center mt-3">Comenzamos las clases en Abril.</p>
+            <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
           </Reveal>
 
