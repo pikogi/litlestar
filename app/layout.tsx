@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Little Star - Clases de Inglés Online para Niños y Niñas',
-  description: 'Clases de inglés online en vivo para niños de 5 a 12 años. Grupos reducidos de máximo 4 alumnos, clases de 50 minutos con profesores bilingües. Portal educativo con videos, canciones y ejercicios.',
+  description: 'Clases de inglés online en vivo para niños de 5 a 12 años. Grupos reducidos de máximo 5 alumnos, clases de 50 minutos con profesores bilingües. Portal educativo con videos, canciones y ejercicios.',
   keywords: ['clases inglés niños', 'inglés online niños', 'escuela inglés online', 'Little Star'],
 }
 

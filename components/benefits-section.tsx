@@ -5,7 +5,7 @@ const benefits = [
   {
     icon: Users,
     title: "Grupos reducidos",
-    description: "Máximo 4 alumnos por clase para una atención personalizada y mayor participación de cada niño.",
+    description: "Máximo 5 alumnos por clase para una atención personalizada y mayor participación de cada niño.",
   },
   {
     icon: Globe,

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "¿Cuántos niños hay por clase?",
-    answer: "Cada clase tiene un máximo de 4 alumnos. Esto garantiza que cada niño reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
+    answer: "Cada clase tiene un máximo de 5 alumnos. Esto garantiza que cada niño reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
   },
   {
     question: "¿Cuánto dura cada clase?",
@@ -26,12 +26,12 @@ const faqs = [
     answer: "El portal incluye videos interactivos, canciones originales en inglés, ejercicios tipo juego y tareas semanales. Tu hijo puede acceder en cualquier momento para reforzar lo aprendido en clase.",
   },
   {
-    question: "¿Cuál es la diferencia entre el plan cuatrimestral y el mensual?",
-    answer: "El plan cuatrimestral tiene un costo de $60.000 por mes (4 meses pagados juntos por $240.000), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan cuatrimestral te permite ahorrar $80.000.",
+    question: "¿Cuál es la diferencia entre el plan trimestral y el mensual?",
+    answer: "El plan trimestral tiene un costo de $60.000 por mes (3 meses pagados juntos por $180.000), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $60.000.",
   },
   {
     question: "¿Qué pasa si inscribo a 2 hijos?",
-    answer: "Si inscribes a 2 hermanos, obtienes un 20% de descuento en ambas membresías. El descuento aplica para plan cuatrimestral.",
+    answer: "Si inscribes a 2 hermanos, obtienes un 20% de descuento en ambas membresías. El descuento aplica para plan trimestral.",
   },
   {
     question: "¿Cómo funciona la garantía de 30 días?",

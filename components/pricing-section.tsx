@@ -4,8 +4,8 @@ import { Reveal } from "@/components/reveal"
 
 const includedBase = [
   "Clases en vivo de 50 minutos",
-  "3 clases por semana",
-  "Grupos de máximo 4 alumnos",
+  "2 clases por semana",
+  "Grupos de máximo 5 alumnos",
   "Profesores certificados",
   "Acceso al portal educativo",
   "Tareas semanales",
@@ -26,7 +26,7 @@ const includedPersonalizado = [
 
 const WA_BASE = "https://wa.me/5493543573905?text="
 
-const WA_CUATRIMESTRAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Cuatrimestral de Little Star. ¿Pueden darme más información?")
+const WA_CUATRIMESTRAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Trimestral de Little Star. ¿Pueden darme más información?")
 const WA_MENSUAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Mensual de Little Star. ¿Pueden darme más información?")
 const WA_PERSONALIZADO = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Personalizado de Little Star. Me gustaría recibir un presupuesto a medida.")
 
@@ -62,8 +62,8 @@ export function PricingSection() {
             </div>
 
             <div className="text-center pt-4">
-              <h3 className="text-xl font-bold text-foreground">Plan Cuatrimestral</h3>
-              <p className="text-sm text-muted-foreground mt-1">4 meses pagados juntos</p>
+              <h3 className="text-xl font-bold text-foreground">Plan Trimestral</h3>
+              <p className="text-sm text-muted-foreground mt-1">3 meses pagados juntos</p>
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
@@ -71,10 +71,10 @@ export function PricingSection() {
                   <span className="text-lg text-muted-foreground font-semibold">/mes</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Total: <span className="font-bold text-foreground">$240.000</span> por 4 meses
+                  Total: <span className="font-bold text-foreground">$180.000</span> por 3 meses
                 </p>
                 <div className="inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full bg-accent/30 text-accent-foreground text-sm font-bold">
-                  Ahorra $80.000
+                  Ahorra $60.000
                 </div>
               </div>
             </div>
@@ -90,9 +90,10 @@ export function PricingSection() {
 
             <Button size="lg" className="mt-8 w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 rounded-xl text-base" asChild>
               <a href={WA_CUATRIMESTRAL} target="_blank" rel="noopener noreferrer">
-                Elegir plan cuatrimestral
+                Elegir plan trimestral
               </a>
             </Button>
+            <p className="text-xs text-muted-foreground text-center mt-3">Comenzamos las clases en Abril.</p>
           </div>
           </Reveal>
 
@@ -128,6 +129,7 @@ export function PricingSection() {
                 Elegir plan mensual
               </a>
             </Button>
+            <p className="text-xs text-muted-foreground text-center mt-3">Comenzamos las clases en Abril.</p>
           </div>
           </Reveal>
 
@@ -184,7 +186,7 @@ export function PricingSection() {
                 Descuento para 2 hermanos: <br className="sm:hidden" />20% OFF
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Si inscribes a 2 hijos, obtienes un 20% de descuento en el plan cuatrimestral.
+                Si inscribes a 2 hijos, obtienes un 20% de descuento en el plan trimestral.
               </p>
             </div>
           </div>
