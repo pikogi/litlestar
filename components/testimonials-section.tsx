@@ -30,7 +30,7 @@ const testimonials = [
     name: "Patricia Sanchez",
     location: "Chile",
     rating: 5,
-    text: "Lo mejor es que son máximo 4 niños por clase. Mi hija recibe mucha atención y la profesora corrige su pronunciación en tiempo real. Las tareas del portal son súper divertidas.",
+    text: "Lo mejor es que son máximo 5 niños por clase. Mi hija recibe mucha atención y la profesora corrige su pronunciación en tiempo real. Las tareas del portal son súper divertidas.",
   },
   {
     name: "Diana Lopez",

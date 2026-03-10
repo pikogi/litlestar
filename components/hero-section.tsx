@@ -41,7 +41,7 @@ export function HeroSection() {
                   <Users className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-foreground">Max 4 alumnos</p>
+                  <p className="text-sm font-bold text-foreground">Max 5 alumnos</p>
                   <p className="text-xs text-muted-foreground">por clase</p>
                 </div>
               </div>
