@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Star, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const WA_GENERIC = `https://wa.me/5493543573905?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`
+const WA_GENERIC = `https://wa.me/5493517712181?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`
 
 const navLinks = [
   { label: "Beneficios", href: "#beneficios" },

@@ -34,7 +34,7 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-8 py-6 rounded-xl text-base shadow-lg" asChild>
                 <a
-                  href={`https://wa.me/5493543573905?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`}
+                  href={`https://wa.me/5493517712181?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

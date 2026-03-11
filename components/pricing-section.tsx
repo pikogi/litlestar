@@ -24,7 +24,7 @@ const includedPersonalizado = [
   "Soporte por WhatsApp",
 ]
 
-const WA_BASE = "https://wa.me/5493543573905?text="
+const WA_BASE = "https://wa.me/5493517712181?text="
 
 const WA_CUATRIMESTRAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Trimestral de Little Star. ¿Pueden darme más información?")
 const WA_MENSUAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Mensual de Little Star. ¿Pueden darme más información?")

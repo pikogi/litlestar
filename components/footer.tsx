@@ -11,7 +11,7 @@ const footerLinks = {
     { label: "Preguntas frecuentes", href: "#faq" },
     {
       label: "Contacto por WhatsApp",
-      href: "https://wa.me/5493543573905?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa",
+      href: "https://wa.me/5493517712181?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa",
       external: true,
     },
     { label: "Politica de privacidad", href: "#" },
