@@ -123,14 +123,25 @@ function LeadFormInner() {
     }
     setErrors({})
     setDone(true)
-    try {
-      await fetch("/api/submit-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
-    } catch (_) {
-      // No bloqueamos la UX si falla el webhook
+    const webhookUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL
+    if (webhookUrl) {
+      try {
+        const payload = {
+          timestamp: new Date().toLocaleString("es-AR", {
+            timeZone: "America/Argentina/Cordoba",
+          }),
+          ...formData,
+        }
+        // mode: 'no-cors' es necesario para llamar Apps Script desde el browser
+        fetch(webhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        })
+      } catch (_) {
+        // No bloqueamos la UX si falla el webhook
+      }
     }
   }
 
