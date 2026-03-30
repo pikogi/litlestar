@@ -1,5 +1,6 @@
 import { Check, Star, Shield, Users, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { Reveal } from "@/components/reveal"
 
 const includedBase = [
@@ -24,11 +25,6 @@ const includedPersonalizado = [
   "Soporte por WhatsApp",
 ]
 
-const WA_BASE = "https://wa.me/5493517712181?text="
-
-const WA_CUATRIMESTRAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Trimestral de Little Star. ¿Pueden darme más información?")
-const WA_MENSUAL = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Mensual de Little Star. ¿Pueden darme más información?")
-const WA_PERSONALIZADO = WA_BASE + encodeURIComponent("Hola, me interesa el Plan Personalizado de Little Star. Me gustaría recibir un presupuesto a medida.")
 
 export function PricingSection() {
   return (
@@ -89,9 +85,9 @@ export function PricingSection() {
             </ul>
 
             <Button size="lg" className="mt-8 w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6 rounded-xl text-base" asChild>
-              <a href={WA_CUATRIMESTRAL} target="_blank" rel="noopener noreferrer">
+              <Link href="/inscripcion?plan=trimestral">
                 Elegir plan trimestral
-              </a>
+              </Link>
             </Button>
             <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
@@ -125,9 +121,9 @@ export function PricingSection() {
             </ul>
 
             <Button size="lg" variant="outline" className="mt-8 w-full font-bold py-6 rounded-xl text-base" asChild>
-              <a href={WA_MENSUAL} target="_blank" rel="noopener noreferrer">
+              <Link href="/inscripcion?plan=mensual">
                 Elegir plan mensual
-              </a>
+              </Link>
             </Button>
             <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
@@ -167,9 +163,9 @@ export function PricingSection() {
             </ul>
 
             <Button size="lg" className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold py-6 rounded-xl text-base" asChild>
-              <a href={WA_PERSONALIZADO} target="_blank" rel="noopener noreferrer">
+              <Link href="/inscripcion?plan=personalizado">
                 Pedir presupuesto
-              </a>
+              </Link>
             </Button>
           </div>
           </Reveal>

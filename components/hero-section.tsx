@@ -1,6 +1,7 @@
 import { Star, Users, Clock, Monitor } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 import { Reveal } from "@/components/reveal"
 
 export function HeroSection() {
@@ -68,13 +69,9 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-10 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold px-8 py-6 rounded-xl shadow-lg" asChild>
-                <a
-                  href={`https://wa.me/5493517712181?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/inscripcion">
                   Reserva tu clase gratis
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="text-base font-bold px-8 py-6 rounded-xl" asChild>
                 <a href="#como-funciona">Ver cómo funciona</a>

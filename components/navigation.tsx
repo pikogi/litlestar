@@ -3,8 +3,7 @@
 import { useState } from "react"
 import { Star, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const WA_GENERIC = `https://wa.me/5493517712181?text=${encodeURIComponent("Hola, me gustaría reservar una reunión para conocer más sobre Little Star y programar la primera clase para mi hijo/a.")}`
+import Link from "next/link"
 
 const navLinks = [
   { label: "Beneficios", href: "#beneficios" },
@@ -45,13 +44,9 @@ export function Navigation() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a
-              href={WA_GENERIC}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/inscripcion">
               Clase gratis
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -81,13 +76,9 @@ export function Navigation() {
             ))}
             <div className="flex flex-col gap-2 pt-3 border-t border-border">
               <Button className="bg-primary text-primary-foreground" asChild>
-                <a
-                  href={WA_GENERIC}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/inscripcion" onClick={() => setMobileOpen(false)}>
                   Clase gratis
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
