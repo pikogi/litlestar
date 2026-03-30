@@ -14,10 +14,6 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-// ─── Reemplazá con el ID de tu video de YouTube ──────────────────────────────
-// Ej: si la URL es https://www.youtube.com/watch?v=dQw4w9WgXcQ, el ID es dQw4w9WgXcQ
-const YOUTUBE_VIDEO_ID = "REEMPLAZAR_CON_ID_DE_YOUTUBE"
-// ─────────────────────────────────────────────────────────────────────────────
 
 type Plan = "trimestral" | "mensual" | "personalizado" | null
 
@@ -251,14 +247,14 @@ function LeadFormInner() {
             ))}
           </div>
 
-          {/* Video embed */}
+          {/* Video */}
           <div className="rounded-2xl overflow-hidden bg-muted aspect-video">
-            <iframe
-              className="w-full h-full"
-              src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1`}
-              title="Cómo son las clases de Little Star"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+            <video
+              className="w-full h-full object-cover"
+              src="/intro-little-star.mp4"
+              controls
+              playsInline
+              preload="metadata"
             />
           </div>
 
