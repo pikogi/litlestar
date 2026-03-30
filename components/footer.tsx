@@ -14,7 +14,7 @@ const footerLinks = {
       href: "https://wa.me/5493517712181?text=Quiero%20reservar%20la%20clase%20gratuita%20para%20mi%20hijo%2Fa",
       external: true,
     },
-    { label: "Politica de privacidad", href: "#" },
+    { label: "Politica de privacidad", href: "/politica-de-privacidad" },
     { label: "Terminos y condiciones", href: "#" },
   ],
 }
