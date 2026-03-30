@@ -123,6 +123,10 @@ function LeadFormInner() {
     }
     setErrors({})
     setDone(true)
+    // Evento de conversión para Meta Ads
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      ;(window as any).fbq("track", "Lead")
+    }
     const webhookUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL
     if (webhookUrl) {
       try {
