@@ -1,6 +1,6 @@
 function doPost(e) {
   var data = JSON.parse(e.postData.contents);
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var sheet = SpreadsheetApp.openById("10QwxAHMXhm2EeSJrPha-xF7REm6cFSAoaJqjB0lNHdk").getActiveSheet();
 
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(["Fecha", "Nombre", "Hijo/a", "Edad", "Plan", "Dias", "Horarios"]);

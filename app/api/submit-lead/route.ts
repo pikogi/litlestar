@@ -1,66 +1,45 @@
 import { NextRequest, NextResponse } from "next/server"
 
-/**
- * Para conectar con Google Sheets:
- *
- * 1. Abrí tu Google Sheet: https://docs.google.com/spreadsheets/d/10QwxAHMXhm2EeSJrPha-xF7REm6cFSAoaJqjB0lNHdk
- * 2. Ir a Extensiones → Apps Script
- * 3. Reemplazá todo el código con esto:
- *
- * -------------------------------------------------------------------
- * function doPost(e) {
- *   const data = JSON.parse(e.postData.contents);
- *   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
- *
- *   if (sheet.getLastRow() === 0) {
- *     sheet.appendRow(['Fecha', 'Nombre padre/madre', 'Nombre hijo/a', 'Edad', 'Plan', 'Días', 'Horarios']);
- *   }
- *
- *   sheet.appendRow([
- *     data.timestamp,
- *     data.parentName,
- *     data.childName,
- *     data.childAge,
- *     data.plan || 'Sin seleccionar',
- *     data.days.join(', '),
- *     data.timeSlots.join(', '),
- *   ]);
- *
- *   return ContentService
- *     .createTextOutput(JSON.stringify({ success: true }))
- *     .setMimeType(ContentService.MimeType.JSON);
- * }
- * -------------------------------------------------------------------
- *
- * 4. Guardar (Ctrl+S) y hacer clic en "Implementar" → "Nueva implementación"
- * 5. Tipo: "Aplicación web", Ejecutar como: "Yo", Acceso: "Cualquier usuario"
- * 6. Copiá la URL que te da y pegala en .env.local:
- *    GOOGLE_SHEET_WEBHOOK_URL=https://script.google.com/macros/s/...
- */
-
 export async function POST(req: NextRequest) {
-  const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL
+  const webhookUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL
 
   if (!webhookUrl) {
-    // No bloqueamos la UX si el webhook no está configurado
-    return NextResponse.json({ success: true })
+    console.error("[submit-lead] NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL no está definida")
+    return NextResponse.json({ success: false, error: "webhook_not_configured" })
   }
+
+  let body
+  try {
+    body = await req.json()
+  } catch (err) {
+    console.error("[submit-lead] Error leyendo el body:", err)
+    return NextResponse.json({ success: false, error: "invalid_body" })
+  }
+
+  const payload = {
+    timestamp: new Date().toLocaleString("es-AR", {
+      timeZone: "America/Argentina/Cordoba",
+    }),
+    ...body,
+  }
+
+  console.log("[submit-lead] Enviando al sheet:", JSON.stringify(payload))
 
   try {
-    const body = await req.json()
-    await fetch(webhookUrl, {
+    const response = await fetch(webhookUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        timestamp: new Date().toLocaleString("es-AR", {
-          timeZone: "America/Argentina/Cordoba",
-        }),
-        ...body,
-      }),
+      headers: { "Content-Type": "text/plain" }, // Apps Script lee mejor text/plain que application/json en server-side
+      body: JSON.stringify(payload),
+      redirect: "follow",
     })
-  } catch (err) {
-    console.error("Google Sheets webhook error:", err)
-  }
 
-  return NextResponse.json({ success: true })
+    console.log("[submit-lead] Respuesta Apps Script - status:", response.status)
+    const text = await response.text()
+    console.log("[submit-lead] Respuesta Apps Script - body:", text)
+
+    return NextResponse.json({ success: true })
+  } catch (err) {
+    console.error("[submit-lead] Error llamando Apps Script:", err)
+    return NextResponse.json({ success: false, error: String(err) })
+  }
 }
