@@ -25,16 +25,36 @@ function ExitosoInner() {
   const isPending = searchParams.get("pending") === "1"
 
   useEffect(() => {
-    // Disparar conversión solo en pagos aprobados
-    if (status === "approved" || (!status && !isPending)) {
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        ;(window as any).fbq("track", "Purchase", {
-          value: PLAN_PRICES[plan] ?? 0,
-          currency: "ARS",
-          content_name: PLAN_LABELS[plan] ?? plan,
-        })
-      }
+    if (status !== "approved" && (status || isPending)) return
+
+    const eventId = crypto.randomUUID()
+    const value = PLAN_PRICES[plan] ?? 0
+
+    // Píxel browser
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      ;(window as any).fbq("track", "Purchase", {
+        value,
+        currency: "ARS",
+        content_name: PLAN_LABELS[plan] ?? plan,
+      }, { eventID: eventId })
     }
+
+    // Conversions API server-side
+    const fbp = document.cookie.match(/_fbp=([^;]+)/)?.[1]
+    const fbc = document.cookie.match(/_fbc=([^;]+)/)?.[1]
+
+    fetch("/api/meta-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventName: "Purchase",
+        eventId,
+        eventSourceUrl: `${window.location.origin}/pago/exitoso`,
+        customData: { value, currency: "ARS" },
+        fbp,
+        fbc,
+      }),
+    })
   }, [plan, status, isPending])
 
   const waMessage = `Hola! Acabo de realizar el pago del ${PLAN_LABELS[plan] ?? "plan"}. Quedo a la espera de confirmar mi horario.`

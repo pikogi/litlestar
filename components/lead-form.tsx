@@ -119,19 +119,39 @@ function LeadFormInner() {
     }
     setErrors({})
     setDone(true)
-    // Evento de conversión para Meta Ads
+
+    // ID único para deduplicar píxel browser + Conversions API
+    const eventId = crypto.randomUUID()
+
+    // Píxel browser
     if (typeof window !== "undefined" && (window as any).fbq) {
-      ;(window as any).fbq("track", "Lead")
+      ;(window as any).fbq("track", "Lead", {}, { eventID: eventId })
     }
-    try {
-      fetch("/api/submit-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
-    } catch (_) {
-      // No bloqueamos la UX si falla el webhook
-    }
+
+    // Leer cookie _fbp para mejor atribución
+    const fbp = document.cookie.match(/_fbp=([^;]+)/)?.[1]
+    const fbc = document.cookie.match(/_fbc=([^;]+)/)?.[1]
+
+    // Conversions API (server-side) — deduplicado con el píxel via eventId
+    fetch("/api/meta-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventName: "Lead",
+        eventId,
+        eventSourceUrl: `${window.location.origin}/inscripcion`,
+        userData: { firstName: formData.parentName },
+        fbp,
+        fbc,
+      }),
+    })
+
+    // Google Sheets
+    fetch("/api/submit-lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
   }
 
   if (done) {
