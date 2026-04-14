@@ -19,14 +19,14 @@ export function Navigation() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent">
             <Star className="w-6 h-6 text-accent-foreground" fill="currentColor" />
           </div>
           <span className="text-xl font-extrabold text-foreground tracking-tight">
             Little Star
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6" aria-label="Navegacion principal">

@@ -15,7 +15,7 @@ const footerLinks = {
       external: true,
     },
     { label: "Politica de privacidad", href: "/politica-de-privacidad" },
-    { label: "Terminos y condiciones", href: "#" },
+    { label: "Terminos y condiciones", href: "/terminos-y-condiciones" },
   ],
 }
 

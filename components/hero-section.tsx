@@ -26,13 +26,13 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight text-balance">
-              Un mundo de{" "}
+              <span className="text-accent-foreground bg-accent/30 px-2 rounded-lg">Clases de inglés online</span>{" "}
+              que abren un mundo de{" "}
               <span className="text-primary">oportunidades</span>{" "}
-              para tu hijo/a con el{" "}
-              <span className="text-accent-foreground bg-accent/30 px-2 rounded-lg">{"inglés"}</span>
+              para tu hijo/a
             </h1>
             <p className="mt-3 text-base text-muted-foreground">
-              Para niños y niñas de 5 a 12 años
+              Para niños y niñas de 5 a 12 años — en vivo, con profesores bilingües
             </p>
 
             {/* Stats */}

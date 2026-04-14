@@ -3,8 +3,16 @@ import { Shield, Star } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Inscripción – Little Star",
-  description: "Reservá la clase gratuita de inglés para tu hijo/a.",
+  title: "Reservá la Clase Gratis de Inglés para tu Hijo/a",
+  description: "Inscribí a tu hijo/a en Little Star y probá gratis la primera clase de inglés online. Grupos de máximo 5 alumnos, profesores bilingües certificados. Sin compromisos.",
+  openGraph: {
+    title: "Reservá la Clase Gratis de Inglés para tu Hijo/a | Little Star",
+    description: "Probá gratis la primera clase de inglés online. Grupos de máximo 5 alumnos, profesores bilingües certificados.",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function InscripcionPage() {
