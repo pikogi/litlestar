@@ -32,7 +32,7 @@ export function TeachersSection() {
         {/* Teachers grid */}
         <div className="flex flex-wrap justify-center gap-8">
           {teachers.map((teacher, index) => (
-            <Reveal key={teacher.name} delay={index * 100} className="w-full max-w-sm">
+            <Reveal key={teacher.name} delay={index * 100} className="w-full max-w-xs">
               <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 {/* Video */}
                 <div className="relative aspect-[9/16] bg-black">
@@ -44,6 +44,13 @@ export function TeachersSection() {
                     poster={teacher.poster}
                   >
                     <source src={teacher.video} type="video/mp4" />
+                    <track
+                      kind="subtitles"
+                      src="/miss-sofi.vtt"
+                      srcLang="es"
+                      label="Español"
+                      default
+                    />
                   </video>
                 </div>
 
