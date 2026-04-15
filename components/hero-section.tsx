@@ -85,13 +85,13 @@ export function HeroSection() {
           </Reveal>
 
           {/* Hero image */}
-          <Reveal direction="right" className="flex-1 relative hidden lg:block">
+          <Reveal direction="right" className="flex-1 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/30">
               <Image
-                src="/images/hero-kids.jpg"
-                alt="Niños aprendiendo inglés online con Little Star"
-                width={640}
-                height={480}
+                src="/images/hero-kids.png"
+                alt="Niña aprendiendo inglés online con Little Star"
+                width={600}
+                height={600}
                 className="w-full h-auto object-cover"
                 priority
               />
