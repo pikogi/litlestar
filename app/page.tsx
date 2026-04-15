@@ -17,8 +17,8 @@ export default function Home() {
       <Navigation />
       <main>
         <HeroSection />
-        <BenefitsSection />
         <WelcomeVideoSection />
+        <BenefitsSection />
         <HowItWorksSection />
         <TeachersSection />
         <TestimonialsSection />
