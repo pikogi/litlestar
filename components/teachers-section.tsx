@@ -6,7 +6,13 @@ const teachers = [
     name: "Miss Sofi",
     bio: "Profesora bilingüe con experiencia en educación infantil. Especialista en metodología lúdica y aprendizaje por inmersión.",
     video: "/miss-sofi.mp4",
-    poster: "/images/miss-sofi-thumb.jpg",
+    poster: "/images/miss-sofi-thumb.png",
+  },
+  {
+    name: "Miss Ruth",
+    bio: "Docente bilingüe apasionada por la enseñanza infantil. Especializada en crear ambientes de aprendizaje dinámicos y motivadores.",
+    video: "/miss-ruth.mp4",
+    poster: "/images/miss-ruth-thumb.png",
   },
 ]
 
@@ -35,22 +41,15 @@ export function TeachersSection() {
             <Reveal key={teacher.name} delay={index * 100} className="w-full max-w-xs">
               <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 {/* Video */}
-                <div className="relative aspect-[9/16] bg-black">
+                <div className="bg-black">
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto block"
                     controls
                     preload="metadata"
                     playsInline
                     poster={teacher.poster}
                   >
                     <source src={teacher.video} type="video/mp4" />
-                    <track
-                      kind="subtitles"
-                      src="/miss-sofi.vtt"
-                      srcLang="es"
-                      label="Español"
-                      default
-                    />
                   </video>
                 </div>
 

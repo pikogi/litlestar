@@ -15,7 +15,7 @@ const steps = [
   {
     number: "03",
     title: "Empieza a aprender",
-    description: "Con su grupo de máximo 4 compañeros, tu hijo asiste a clases semanales de 50 minutos llenas de juegos y actividades.",
+    description: "Con su grupo de máximo 5 compañeros, tu hijo asiste a clases semanales de 50 minutos llenas de juegos y actividades.",
   },
   {
     number: "04",

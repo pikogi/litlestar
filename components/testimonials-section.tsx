@@ -36,7 +36,7 @@ const testimonials = [
     name: "Diana Lopez",
     location: "Laguna Larga, Córdoba",
     rating: 5,
-    text: "Llevamos 6 meses con Little Star y el progreso de mi hijo es impresionante. Puede mantener conversaciones simples en inglés y le encanta ver los videos del portal.",
+    text: "Llevamos 3 meses con Little Star y el progreso de mi hijo es impresionante. Puede mantener conversaciones simples en inglés y le encanta ver los videos del portal.",
   },
 ]
 
