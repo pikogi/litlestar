@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { BenefitsSection } from "@/components/benefits-section"
 import { WelcomeVideoSection } from "@/components/welcome-video-section"
-import { HowItWorksSection } from "@/components/how-it-works-section"
+// import { HowItWorksSection } from "@/components/how-it-works-section"
 import { TeachersSection } from "@/components/teachers-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { PortalSection } from "@/components/portal-section"
@@ -19,7 +19,7 @@ export default function Home() {
         <HeroSection />
         <WelcomeVideoSection />
         <BenefitsSection />
-        <HowItWorksSection />
+        {/* <HowItWorksSection /> */}
         <TeachersSection />
         <TestimonialsSection />
         <PortalSection />
