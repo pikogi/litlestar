@@ -7,8 +7,8 @@ import Link from "next/link"
 
 const navLinks = [
   { label: "Beneficios", href: "#beneficios" },
-  { label: "Como funciona", href: "#como-funciona" },
   { label: "Precios", href: "#precios" },
+  { label: "Clases particulares", href: "/clases-particulares" },
   { label: "FAQ", href: "#faq" },
 ]
 

@@ -7,6 +7,7 @@ import { TeachersSection } from "@/components/teachers-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { PortalSection } from "@/components/portal-section"
 import { PricingSection } from "@/components/pricing-section"
+import { PrivateClassesSection } from "@/components/private-classes-section"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
@@ -24,6 +25,7 @@ export default function Home() {
         <TestimonialsSection />
         <PortalSection />
         <PricingSection />
+        <PrivateClassesSection />
         <FAQSection />
         <CTASection />
       </main>

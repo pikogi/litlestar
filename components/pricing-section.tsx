@@ -63,14 +63,14 @@ export function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">$60.000</span>
+                  <span className="text-5xl font-extrabold text-foreground">$66.666</span>
                   <span className="text-lg text-muted-foreground font-semibold">/mes</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Total: <span className="font-bold text-foreground">$180.000</span> por 3 meses
+                  Total: <span className="font-bold text-foreground">$200.000</span> por 3 meses
                 </p>
                 <div className="inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full bg-accent/30 text-accent-foreground text-sm font-bold">
-                  Ahorra $60.000
+                  Ahorra $40.000
                 </div>
               </div>
             </div>
