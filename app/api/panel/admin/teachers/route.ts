@@ -77,20 +77,26 @@ export async function PATCH(request: Request) {
   const adminUser = await requireAdmin()
   if (!adminUser) return NextResponse.json({ error: "unauthorized" }, { status: 401 })
 
-  const { id, active } = await request.json()
+  const body = await request.json()
+  const { id, active, name, bio } = body
 
-  if (!id || typeof active !== "boolean") {
-    return NextResponse.json({ error: "missing_fields" }, { status: 400 })
+  if (!id) return NextResponse.json({ error: "missing id" }, { status: 400 })
+
+  const updates: Record<string, unknown> = {}
+  if (typeof active === "boolean") updates.active = active
+  if (name !== undefined) updates.name = name
+  if (bio !== undefined) updates.bio = bio
+
+  if (Object.keys(updates).length === 0) {
+    return NextResponse.json({ error: "no fields to update" }, { status: 400 })
   }
 
   const { error } = await serviceSupabase
     .from("teachers")
-    .update({ active })
+    .update(updates)
     .eq("id", id)
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
-  }
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
   return NextResponse.json({ success: true })
 }

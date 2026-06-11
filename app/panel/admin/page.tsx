@@ -32,7 +32,7 @@ export default async function AdminPage() {
 
   const { data: allTeachers } = await serviceSupabase
     .from("teachers")
-    .select("id, name, bio, active, role")
+    .select("id, name, bio, active, role, image_url, video_url")
     .eq("role", "teacher")
     .order("created_at", { ascending: true })
 
