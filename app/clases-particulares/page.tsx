@@ -16,7 +16,7 @@ export const metadata = {
 export default async function ClasesParticularesPage() {
   const { data } = await supabase
     .from("teachers")
-    .select("name, bio")
+    .select("name, bio, image_url, video_url")
     .eq("active", true)
     .eq("role", "teacher")
     .order("created_at", { ascending: true })
@@ -24,6 +24,8 @@ export default async function ClasesParticularesPage() {
   const teachers = (data ?? []).map((t) => ({
     name: t.name as string,
     bio: (t.bio as string) ?? "",
+    image_url: (t.image_url as string | null) ?? null,
+    video_url: (t.video_url as string | null) ?? null,
   }))
   return (
     <div className="min-h-screen bg-background">

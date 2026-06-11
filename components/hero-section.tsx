@@ -1,4 +1,4 @@
-import { Star, Users, Clock, Monitor } from "lucide-react"
+import { Star, Users, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -32,7 +32,7 @@ export function HeroSection() {
               para tu hijo/a
             </h1>
             <p className="mt-3 text-base text-muted-foreground">
-              Para niños y niñas de 5 a 12 años — en vivo, con profesores bilingües
+              Para niños y adolescentes de 5 a 18 años — en vivo, con profesoras bilingües
             </p>
 
             {/* Stats */}
@@ -55,15 +55,6 @@ export function HeroSection() {
                   <p className="text-xs text-muted-foreground">por sesión</p>
                 </div>
               </div>
-              <div className="hidden lg:flex items-center gap-2">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
-                  <Monitor className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground">Portal exclusivo</p>
-                  <p className="text-xs text-muted-foreground">videos y canciones</p>
-                </div>
-              </div>
             </div>
 
             {/* CTAs */}
@@ -79,9 +70,6 @@ export function HeroSection() {
             </div>
 
             {/* Trust badge */}
-            <p className="mt-6 text-sm text-muted-foreground">
-              Garantía de devolución de 30 días. Sin compromisos.
-            </p>
           </Reveal>
 
           {/* Hero image */}

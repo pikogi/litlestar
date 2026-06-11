@@ -7,12 +7,12 @@ const highlights = [
   {
     icon: UserCheck,
     title: "Atención exclusiva",
-    description: "Tu hijo es el único alumno en clase. Todo el tiempo de la profe es para él/ella.",
+    description: "El alumno es el único en clase. Todo el tiempo de la profe es para él/ella.",
   },
   {
     icon: Calendar,
     title: "Horario a tu medida",
-    description: "Elegís los días y horarios que mejor se adapten a la rutina de tu familia.",
+    description: "Elegís los días y horarios que mejor se adapten a la rutina de cada familia.",
   },
   {
     icon: TrendingUp,

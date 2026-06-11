@@ -12,35 +12,35 @@ import { Reveal } from "@/components/reveal"
 const faqs = [
   {
     question: "¿Para qué edades son las clases de Little Star?",
-    answer: "Nuestras clases están diseñadas para niños de 5 a 12 años. Agrupamos a los alumnos por edad y nivel para que cada clase sea adecuada y estimulante.",
+    answer: "Nuestras clases están diseñadas para alumnos de 5 a 18 años. Agrupamos a los alumnos por edad y nivel para que cada clase sea adecuada y estimulante.",
   },
   {
-    question: "¿Cuántos niños hay por clase?",
-    answer: "Cada clase tiene un máximo de 5 alumnos. Esto garantiza que cada niño reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
+    question: "¿Cuántos alumnos hay por clase?",
+    answer: "Cada clase tiene un máximo de 5 alumnos. Esto garantiza que cada alumno reciba atención personalizada, tenga tiempo para participar y la profesora pueda corregir pronunciación individualmente.",
   },
   {
     question: "¿Cuánto dura cada clase?",
     answer: "Cada sesión dura 50 minutos, divididos en actividades dinámicas: warm-up con canciones, vocabulario con juegos, práctica de conversación y una actividad final divertida.",
   },
   {
-    question: "¿Qué incluye el portal educativo?",
-    answer: "El portal incluye videos interactivos, canciones originales en inglés, ejercicios tipo juego y tareas semanales. Tu hijo puede acceder en cualquier momento para reforzar lo aprendido en clase.",
-  },
-  {
     question: "¿Cuál es la diferencia entre el plan trimestral y el mensual?",
-    answer: "El plan trimestral tiene un costo de $60.000 por mes (3 meses pagados juntos por $180.000), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $60.000.",
+    answer: "El plan trimestral tiene un costo total de $195.000 (3 meses pagados juntos), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $45.000.",
   },
   {
     question: "¿Qué pasa si inscribo a 2 hijos?",
     answer: "Si inscribes a 2 hermanos, obtienes un 20% de descuento en ambas membresías. El descuento aplica para plan trimestral.",
   },
   {
-    question: "¿Cómo funciona la garantía de 30 días?",
-    answer: "Si durante los primeros 30 días no estás satisfecho con nuestro servicio por cualquier motivo, te devolvemos el 100% de tu dinero. Solo debes contactarnos y procesamos el reembolso sin preguntas.",
+    question: "Mi hijo/a no sabe nada de inglés, ¿puede tomar clases?",
+    answer: "Por supuesto. Tenemos niveles desde principiante absoluto. Las profesoras usan gestos, imágenes, juegos y actividades adaptadas a cada edad para que los alumnos entiendan desde la primera clase sin necesidad de traducir.",
   },
   {
-    question: "Mi hijo no sabe nada de inglés, ¿puede tomar clases?",
-    answer: "Por supuesto. Tenemos niveles desde principiante absoluto. Los profesores usan gestos, imágenes, juegos y el método TPR (respuesta física total) para que los niños entiendan desde la primera clase sin necesidad de traducir.",
+    question: "¿Las clases funcionan también para adolescentes?",
+    answer: "Sí. Tenemos grupos separados según la edad: niños (5-11 años) y adolescentes (12-18 años). El enfoque pedagógico cambia: con los más grandes usamos proyectos, debates, cultura pop y contenido relevante para ellos. El ritmo y los temas son muy distintos a los de los más chicos.",
+  },
+  {
+    question: "¿Qué es el apoyo escolar y a quién está dirigido?",
+    answer: "El apoyo escolar es un servicio de clases 1 a 1 enfocado en el material del colegio: tareas, exámenes, reading comprehension, writing y oral exams. Está pensado para alumnos de primaria y secundaria que necesitan reforzar el inglés de la escuela o prepararse para una evaluación importante.",
   },
   {
     question: "¿Qué necesito para las clases?",
@@ -67,7 +67,7 @@ const faqSchema = {
 
 export function FAQSection() {
   return (
-    <section id="faq" className="pb-16 lg:pb-24 pt-6 lg:pt-8">
+    <section id="faq" className="py-16 lg:py-24 bg-secondary">
       <Script
         id="schema-faq"
         type="application/ld+json"
@@ -84,7 +84,7 @@ export function FAQSection() {
             Resolvemos tus dudas
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Todo lo que necesitas saber antes de inscribir a tu hijo.
+            Todo lo que necesitás saber antes de inscribirte.
           </p>
         </div>
         </Reveal>

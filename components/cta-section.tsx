@@ -1,4 +1,3 @@
-import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -14,7 +13,7 @@ export function CTASection() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto lg:mx-0">
               <Image
                 src="/images/kid-laptop.jpg"
-                alt="Niño feliz aprendiendo inglés con Little Star"
+                alt="Alumno feliz aprendiendo inglés con Little Star"
                 width={640}
                 height={480}
                 className="w-full h-auto object-cover"
@@ -25,11 +24,10 @@ export function CTASection() {
           {/* Content */}
           <Reveal direction="right" className="flex-1 text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl font-extrabold text-primary-foreground text-balance">
-              La primera clase es gratis. Dale a tu hijo la oportunidad de brillar.
+              La primera clase es gratis. Dale a tu hijo/a o adolescente la oportunidad de brillar.
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/80 text-pretty">
-              Reserva una clase de prueba sin compromiso. Conoce a los profesores,
-              ve cómo tu hijo disfruta aprendiendo y decide después.
+              Reserva una clase de prueba sin compromiso. Conocé a las profes, ve cómo aprende y decidí después.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center lg:justify-start">
@@ -40,12 +38,6 @@ export function CTASection() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-4 mt-6 justify-center lg:justify-start">
-              <div className="flex items-center gap-2 text-primary-foreground/70">
-                <Shield className="w-4 h-4" />
-                <span className="text-sm font-semibold">Garantía 30 días</span>
-              </div>
-            </div>
           </Reveal>
         </div>
       </div>

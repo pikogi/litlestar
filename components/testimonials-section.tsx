@@ -6,7 +6,7 @@ const testimonials = [
     name: "Maria Rodriguez",
     location: "Córdoba Capital, Córdoba",
     rating: 5,
-    text: "Mi hija de 6 años esperaba cada clase con emoción. En solo 3 meses ya decía frases completas en inglés. Los profesores son increíbles y el portal tiene canciones que canta todo el día.",
+    text: "Mi hija de 6 años esperaba cada clase con emoción. En solo 3 meses ya decía frases completas en inglés. Los profesores son increíbles y tiene canciones en inglés que canta todo el día.",
   },
   {
     name: "Carolina Perez",
@@ -18,25 +18,25 @@ const testimonials = [
     name: "Ana Garcia",
     location: "Río Cuarto, Córdoba",
     rating: 5,
-    text: "Al principio mi hijo era muy tímido para hablar en inglés, pero la profesora lo hizo sentir tan cómodo que ahora no para. El portal con videos y ejercicios es un complemento excelente.",
+    text: "Al principio mi hijo era muy tímido para hablar en inglés, pero la profesora lo hizo sentir tan cómodo que ahora no para. Las clases grabadas son un complemento excelente para repasar.",
   },
   {
     name: "Laura Mendoza",
     location: "Alta Gracia, Córdoba",
     rating: 5,
-    text: "La garantía de 30 días nos dio confianza para probar. Desde la primera clase supimos que era lo que buscábamos. Mi niño de 5 años ya entiende instrucciones básicas en inglés.",
+    text: "La primera clase gratis nos dio confianza para probar. Desde el primer día supimos que era lo que buscábamos. Mi niño de 5 años ya entiende instrucciones básicas en inglés.",
   },
   {
-    name: "Patricia Sanchez",
-    location: "Villa María, Córdoba",
+    name: "Valeria Torres",
+    location: "Mendoza",
     rating: 5,
-    text: "Lo mejor es que son máximo 5 niños por clase. Mi hija recibe mucha atención y la profesora corrige su pronunciación en tiempo real. Las tareas del portal son súper divertidas.",
+    text: "Mi hijo de 15 años tenía inglés en el secundario y le costaba mucho. Con las clases de apoyo escolar de Little Star mejoró sus notas en un trimestre. La profe lo ayuda con el material del colegio directamente.",
   },
   {
-    name: "Diana Lopez",
-    location: "Laguna Larga, Córdoba",
+    name: "Gabriela Ríos",
+    location: "Buenos Aires",
     rating: 5,
-    text: "Llevamos 3 meses con Little Star y el progreso de mi hijo es impresionante. Puede mantener conversaciones simples en inglés y le encanta ver los videos del portal.",
+    text: "Mi adolescente de 13 años no quería saber nada con el inglés. Desde que arrancó con Little Star cambió totalmente: habla con confianza y tiene muchas ganas de seguir. Lo recomiendo sin dudas.",
   },
 ]
 
@@ -82,7 +82,7 @@ export function TestimonialsSection() {
               Lo que dicen los papás y mamás
             </h2>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
-              Más de 100 familias de toda Latinoamérica ya aprendieron inglés con Little Star.
+              Más de 100 familias de toda Latinoamérica ya aprenden inglés con Little Star.
             </p>
           </div>
         </Reveal>
@@ -98,10 +98,7 @@ export function TestimonialsSection() {
                 </p>
                 <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border">
                   <Avatar name={t.name} />
-                  <div>
-                    <p className="text-sm font-bold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.location}</p>
-                  </div>
+                  <p className="text-sm font-bold text-foreground">{t.name}</p>
                 </div>
               </div>
             </Reveal>

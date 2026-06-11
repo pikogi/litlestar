@@ -23,12 +23,12 @@ const features = [
   {
     icon: Music,
     title: "Canciones en inglés",
-    description: "Música original diseñada para que los niños memoricen frases y vocabulario cantando.",
+    description: "Música original para memorizar frases y vocabulario de forma natural.",
   },
   {
     icon: Gamepad2,
     title: "Juegos interactivos",
-    description: "Actividades tipo juego que evalúan comprensión y mantienen a los niños motivados.",
+    description: "Actividades tipo juego que evalúan comprensión y mantienen a los alumnos motivados.",
   },
   {
     icon: PenTool,
@@ -47,7 +47,7 @@ export function PortalSection() {
   const activeVideo = tabs.find((t) => t.id === activeTab)!
 
   return (
-    <section id="portal" className="py-16 lg:py-24 bg-secondary">
+    <section id="clases-en-accion" className="py-16 lg:py-24 bg-secondary">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
@@ -105,13 +105,13 @@ export function PortalSection() {
           {/* Content */}
           <Reveal direction="right" className="flex-1 order-1 lg:order-2 text-center lg:text-left">
             <span className="text-sm font-bold text-primary uppercase tracking-wider">
-              Portal del alumno
+              Así son nuestras clases
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-foreground text-balance">
-              Un mundo de aprendizaje fuera de clase
+              Aprender inglés puede ser divertido de verdad
             </h2>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
-              Con la membresía de Little Star, tu hijo accede a un portal exclusivo donde puede seguir aprendiendo a su ritmo.
+              En cada clase combinamos canciones, juegos y actividades interactivas para que el inglés se aprenda de forma natural y sin aburrirse.
             </p>
 
             {/* Feature list */}

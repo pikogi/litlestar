@@ -5,11 +5,13 @@ import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PrivateClassesForm } from "@/components/private-classes-form"
 
-type TeacherData = { name: string; bio: string }
+type TeacherData = { name: string; bio: string; image_url?: string | null; video_url?: string | null }
 
-const VIDEO_MAP: Record<string, { video: string; poster: string }> = {
+const FALLBACK_MEDIA: Record<string, { video?: string; poster: string }> = {
   "Miss Sofi": { video: "/miss-sofi.mp4", poster: "/images/miss-sofi-thumb.png" },
   "Miss Ruth": { video: "/miss-ruth.mp4", poster: "/images/miss-ruth-thumb.png" },
+  "Miss Mica": { poster: "/images/miss-mica-thumb.png" },
+  "Miss Reni": { poster: "/images/miss-reni-thumb.png" },
 }
 
 export function PrivateClassesContent({ teachers }: { teachers: TeacherData[] }) {
@@ -35,28 +37,34 @@ export function PrivateClassesContent({ teachers }: { teachers: TeacherData[] })
           Clases 1 a 1 con nuestras profes
         </h1>
         <p className="mt-4 text-muted-foreground text-pretty max-w-xl mx-auto">
-          Elegí la profe ideal para tu hijo/a y reservá la primera clase gratis. Sin compromisos.
+          Clases de inglés 1 a 1 para cualquier objetivo: aprender desde cero, practicar conversación o reforzar el inglés del colegio. Elegí la profe y reservá la primera clase gratis.
         </p>
       </div>
 
       {/* Teachers grid */}
       <div className="flex flex-wrap justify-center gap-8 mb-16">
         {teachers.map((teacher) => {
-          const media = VIDEO_MAP[teacher.name]
+          const fallback = FALLBACK_MEDIA[teacher.name] ?? { poster: "" }
+          const video = teacher.video_url ?? fallback.video
+          const poster = teacher.image_url ?? fallback.poster
           return (
             <div key={teacher.name} className="w-full max-w-xs">
               <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-md hover:shadow-xl transition-shadow h-full flex flex-col">
-                {media ? (
+                {video ? (
                   <div className="bg-black">
                     <video
                       className="w-full h-auto block"
                       controls
                       preload="metadata"
                       playsInline
-                      poster={media.poster}
+                      poster={poster}
                     >
-                      <source src={media.video} type="video/mp4" />
+                      <source src={video} type="video/mp4" />
                     </video>
+                  </div>
+                ) : poster ? (
+                  <div className="relative w-full aspect-square">
+                    <img src={poster} alt={teacher.name} className="w-full h-full object-cover" />
                   </div>
                 ) : (
                   <div className="bg-accent/20 h-40 flex items-center justify-center">

@@ -1,16 +1,15 @@
-import { Check, Star, Shield, Users, Sparkles } from "lucide-react"
+import { Check, Star, Users, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Reveal } from "@/components/reveal"
 
 const includedBase = [
   "Clases en vivo de 50 minutos",
-  "2 clases por semana",
+  "2 clases por semana (8 por mes)",
   "Grupos de máximo 5 alumnos",
-  "Profesores certificados",
-  "Acceso al portal educativo",
+  "Clases grabadas",
   "Tareas semanales",
-  "Reporte de progreso mensual",
+  "Evaluaciones trimestrales",
   "Soporte por WhatsApp",
 ]
 
@@ -18,8 +17,7 @@ const includedPersonalizado = [
   "Clases individuales 1 a 1",
   "Frecuencia y horario a elección",
   "Cantidad de clases a definir",
-  "Profesores certificados",
-  "Acceso al portal educativo",
+  "Clases grabadas",
   "Seguimiento personalizado",
   "Reporte de progreso",
   "Soporte por WhatsApp",
@@ -40,7 +38,7 @@ export function PricingSection() {
             Planes simples y accesibles
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Elige el plan que mejor se adapte a tu familia. Todos los planes incluyen acceso completo al portal educativo.
+            Elige el plan que mejor se adapte a tu familia.
           </p>
         </div>
         </Reveal>
@@ -63,14 +61,14 @@ export function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">$66.666</span>
+                  <span className="text-5xl font-extrabold text-foreground">$65.000</span>
                   <span className="text-lg text-muted-foreground font-semibold">/mes</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Total: <span className="font-bold text-foreground">$200.000</span> por 3 meses
+                  Total: <span className="font-bold text-foreground">$195.000</span> por 3 meses
                 </p>
                 <div className="inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full bg-accent/30 text-accent-foreground text-sm font-bold">
-                  Ahorra $40.000
+                  Ahorra $45.000
                 </div>
               </div>
             </div>
@@ -89,7 +87,6 @@ export function PricingSection() {
                 Elegir plan trimestral
               </Link>
             </Button>
-            <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
           </Reveal>
 
@@ -125,7 +122,6 @@ export function PricingSection() {
                 Elegir plan mensual
               </Link>
             </Button>
-            <p className="text-xs font-bold text-primary text-center mt-3 tracking-wide uppercase">Comenzamos las clases en Abril 2026</p>
           </div>
           </Reveal>
 
@@ -141,7 +137,7 @@ export function PricingSection() {
 
             <div className="text-center pt-4">
               <h3 className="text-xl font-bold text-foreground">Plan Personalizado</h3>
-              <p className="text-sm text-muted-foreground mt-1">Diseñado para las necesidades de tu hijo/a</p>
+              <p className="text-sm text-muted-foreground mt-1">Diseñado para las necesidades de tu alumno/a</p>
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
@@ -188,22 +184,6 @@ export function PricingSection() {
           </div>
         </div>
 
-        {/* Guarantee */}
-        <div className="mt-6 max-w-6xl mx-auto">
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-            <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 shrink-0">
-              <Shield className="w-7 h-7 text-primary" />
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h3 className="text-lg font-bold text-foreground">
-                Garantía de devolución de 30 días
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                Si durante los primeros 30 días no estás satisfecho con nuestro servicio, te devolvemos el 100% de tu dinero. Sin preguntas.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

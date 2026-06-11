@@ -3,8 +3,8 @@ import { Star } from "lucide-react"
 const footerLinks = {
   escuela: [
     { label: "Beneficios", href: "#beneficios" },
-    { label: "Como funciona", href: "#como-funciona" },
-    { label: "Portal educativo", href: "#portal" },
+    { label: "Clases particulares", href: "/clases-particulares" },
+    { label: "Apoyo escolar", href: "#apoyo-escolar" },
     { label: "Precios", href: "#precios" },
   ],
   soporte: [
@@ -35,7 +35,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-background/60 leading-relaxed max-w-xs">
-              Clases de inglés online en vivo para niños de 5 a 12 años. Grupos reducidos, profesores certificados y un portal educativo único.
+              Clases de inglés online en vivo para niños y adolescentes de 5 a 18 años. Grupos reducidos, clases particulares y apoyo escolar.
             </p>
           </div>
 

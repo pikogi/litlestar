@@ -9,7 +9,7 @@ export async function GET() {
 
   const { data } = await serviceSupabase
     .from("teachers")
-    .select("name, bio")
+    .select("name, bio, image_url, video_url")
     .eq("user_id", user.id)
     .single()
 

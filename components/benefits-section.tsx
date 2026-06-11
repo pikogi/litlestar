@@ -1,36 +1,21 @@
-import { Globe, Sparkles, BookOpen, Headphones, Shield, Users } from "lucide-react"
+import { Sparkles, BookOpen, Users } from "lucide-react"
 import { Reveal } from "@/components/reveal"
 
 const benefits = [
   {
     icon: Users,
     title: "Grupos reducidos",
-    description: "Máximo 5 alumnos por clase para una atención personalizada y mayor participación de cada niño.",
+    description: "Máximo 5 alumnos por clase para una atención personalizada y mayor participación.",
   },
   {
-    icon: Globe,
-    title: "Inmersión en inglés",
-    description: "Las clases son 100% en inglés. Los niños se acostumbran rápidamente a comunicarse sin traducir.",
+    icon: BookOpen,
+    title: "Clases grabadas",
+    description: "Acceso a las grabaciones de cada clase para que tu hijo pueda repasar cuando quiera.",
   },
   {
     icon: Sparkles,
     title: "Aprendizaje con juegos",
-    description: "Método basado en juegos, canciones y actividades interactivas que mantienen a los niños motivados.",
-  },
-  {
-    icon: BookOpen,
-    title: "Portal educativo",
-    description: "Acceso a videos, canciones, ejercicios y tareas para reforzar lo aprendido en cada clase.",
-  },
-  {
-    icon: Headphones,
-    title: "Profesores certificados",
-    description: "Docentes bilingües con experiencia en educación infantil y certificaciones internacionales.",
-  },
-  {
-    icon: Shield,
-    title: "Garantía 30 días",
-    description: "Si no estás satisfecho, te devolvemos tu dinero. Sin preguntas, sin complicaciones.",
+    description: "Método basado en juegos, proyectos y actividades interactivas que mantienen a los alumnos motivados.",
   },
 ]
 
@@ -45,7 +30,7 @@ export function BenefitsSection() {
               Por qué Little Star
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-foreground text-balance">
-              Todo lo que tu hijo necesita para aprender inglés
+              Todo lo que necesitás para aprender inglés de verdad
             </h2>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
               Combinamos tecnología, pedagogía y diversión para que cada clase sea una experiencia inolvidable.

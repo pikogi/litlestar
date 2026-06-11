@@ -74,7 +74,7 @@ export default async function DashboardPage() {
             <h2 className="text-base font-semibold text-foreground">Mi perfil</h2>
           </div>
           <div className="p-6">
-            <ProfileEditor profile={{ name: teacher.name, bio: teacher.bio }} />
+            <ProfileEditor profile={{ name: teacher.name, bio: teacher.bio, image_url: teacher.image_url ?? null, video_url: teacher.video_url ?? null }} />
           </div>
         </section>
       </main>

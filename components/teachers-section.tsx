@@ -1,22 +1,33 @@
 import { Reveal } from "@/components/reveal"
 import { Star } from "lucide-react"
+import Image from "next/image"
+import { supabase } from "@/lib/supabase"
 
-const teachers = [
-  {
-    name: "Miss Sofi",
-    bio: "Profesora bilingüe con experiencia en educación infantil. Especialista en metodología lúdica y aprendizaje por inmersión.",
-    video: "/miss-sofi.mp4",
-    poster: "/images/miss-sofi-thumb.png",
-  },
-  {
-    name: "Miss Ruth",
-    bio: "Docente bilingüe apasionada por la enseñanza infantil. Especializada en crear ambientes de aprendizaje dinámicos y motivadores.",
-    video: "/miss-ruth.mp4",
-    poster: "/images/miss-ruth-thumb.png",
-  },
-]
+const FALLBACK_MEDIA: Record<string, { video?: string; poster: string }> = {
+  "Miss Sofi": { video: "/miss-sofi.mp4", poster: "/images/miss-sofi-thumb.png" },
+  "Miss Ruth": { video: "/miss-ruth.mp4", poster: "/images/miss-ruth-thumb.png" },
+  "Miss Mica": { poster: "/images/miss-mica-thumb.png" },
+  "Miss Reni": { poster: "/images/miss-reni-thumb.png" },
+}
 
-export function TeachersSection() {
+export async function TeachersSection() {
+  const { data } = await supabase
+    .from("teachers")
+    .select("name, bio, image_url, video_url")
+    .eq("active", true)
+    .eq("role", "teacher")
+    .order("created_at", { ascending: true })
+
+  const teachers = (data ?? []).map((t) => {
+    const fallback = FALLBACK_MEDIA[t.name as string] ?? { poster: "" }
+    return {
+      name: t.name as string,
+      bio: (t.bio as string) ?? "",
+      video: (t.video_url as string | null) ?? fallback.video,
+      poster: (t.image_url as string | null) ?? fallback.poster,
+    }
+  })
+
   return (
     <section id="profes" className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -30,30 +41,43 @@ export function TeachersSection() {
               Conocé a nuestros profes
             </h2>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
-              Docentes bilingües certificados, apasionados por enseñar y con experiencia en educación infantil.
+              Docentes bilingües certificadas, apasionadas por enseñar a niños y adolescentes.
             </p>
           </div>
         </Reveal>
 
         {/* Teachers grid */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {teachers.map((teacher, index) => (
-            <Reveal key={teacher.name} delay={index * 100} className="w-full max-w-xs">
+            <Reveal key={teacher.name} delay={index * 100}>
               <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                {/* Video */}
-                <div className="bg-black">
-                  <video
-                    className="w-full h-auto block"
-                    controls
-                    preload="metadata"
-                    playsInline
-                    poster={teacher.poster}
-                  >
-                    <source src={teacher.video} type="video/mp4" />
-                  </video>
-                </div>
+                {teacher.video ? (
+                  <div className="bg-black">
+                    <video
+                      className="w-full h-auto block"
+                      controls
+                      preload="metadata"
+                      playsInline
+                      poster={teacher.poster}
+                    >
+                      <source src={teacher.video} type="video/mp4" />
+                    </video>
+                  </div>
+                ) : teacher.poster ? (
+                  <div className="relative w-full aspect-square">
+                    <Image
+                      src={teacher.poster}
+                      alt={teacher.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full aspect-square bg-accent/20 flex items-center justify-center">
+                    <Star className="w-12 h-12 text-accent-foreground/20" fill="currentColor" />
+                  </div>
+                )}
 
-                {/* Info */}
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-accent">

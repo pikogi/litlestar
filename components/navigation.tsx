@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Beneficios", href: "#beneficios" },
   { label: "Precios", href: "#precios" },
   { label: "Clases particulares", href: "/clases-particulares" },
+  { label: "Apoyo escolar", href: "#apoyo-escolar" },
   { label: "FAQ", href: "#faq" },
 ]
 
