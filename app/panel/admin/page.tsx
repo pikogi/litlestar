@@ -4,7 +4,6 @@ import { supabase as serviceSupabase } from "@/lib/supabase"
 import { AdminReservations } from "@/components/panel/admin-reservations"
 import { CreateTeacherForm } from "@/components/panel/create-teacher-form"
 import { TeacherToggleList } from "@/components/panel/teacher-toggle-list"
-import { SetPasswordForm } from "@/components/panel/set-password-form"
 import { PanelNav } from "@/components/panel/panel-nav"
 
 export default async function AdminPage() {
@@ -76,7 +75,7 @@ export default async function AdminPage() {
           <div className="px-6 py-4 border-b border-border">
             <h2 className="text-base font-semibold text-foreground">Agregar profe</h2>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Le llega un email de invitación para crear su contraseña
+              Creá la cuenta con contraseña manual — no se envía ningún email
             </p>
           </div>
           <div className="p-6">
@@ -84,18 +83,6 @@ export default async function AdminPage() {
           </div>
         </section>
 
-        {/* Setear contraseña sin email */}
-        <section className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
-          <div className="px-6 py-4 border-b border-border">
-            <h2 className="text-base font-semibold text-foreground">Setear contraseña manual</h2>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              Si el email no llega o hay rate limit — seteá la contraseña vos y mandásela por WhatsApp
-            </p>
-          </div>
-          <div className="p-6">
-            <SetPasswordForm />
-          </div>
-        </section>
       </main>
     </div>
   )

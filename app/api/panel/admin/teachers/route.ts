@@ -25,49 +25,55 @@ export async function POST(request: Request) {
   const adminUser = await requireAdmin()
   if (!adminUser) return NextResponse.json({ error: "unauthorized" }, { status: 401 })
 
-  const { name, email } = await request.json()
+  const { name, email, password } = await request.json()
 
-  if (!name || !email) {
+  if (!name || !email || !password) {
     return NextResponse.json({ error: "missing_fields" }, { status: 400 })
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"
+  // Check if auth user already exists
+  const { data: existingList } = await adminAuthClient.auth.admin.listUsers()
+  const existingAuthUser = existingList?.users.find((u) => u.email === email)
 
-  const { error: inviteError } = await adminAuthClient.auth.admin.inviteUserByEmail(email, {
-    redirectTo: `${siteUrl}/auth/callback`,
-  })
+  let authUserId: string
 
-  if (inviteError) {
-    const alreadyExists = inviteError.message.toLowerCase().includes("already been registered")
-    if (alreadyExists) {
-      // User exists — send a password reset email so they can set/reset their password
-      const { error: resetError } = await adminAuthClient.auth.resetPasswordForEmail(email, {
-        redirectTo: `${siteUrl}/auth/callback`,
-      })
-      if (resetError) {
-        return NextResponse.json({ error: resetError.message }, { status: 500 })
-      }
-    } else {
-      return NextResponse.json({ error: inviteError.message }, { status: 500 })
-    }
+  if (existingAuthUser) {
+    // Update password for existing user
+    const { error } = await adminAuthClient.auth.admin.updateUserById(existingAuthUser.id, { password })
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+    authUserId = existingAuthUser.id
+  } else {
+    // Create new auth user with password, no email sent
+    const { data, error } = await adminAuthClient.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+    })
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+    authUserId = data.user.id
   }
 
+  // Upsert teacher row
   const { data: existing } = await serviceSupabase
     .from("teachers")
     .select("id")
     .eq("email", email)
     .single()
 
-  if (!existing) {
+  if (existing) {
+    await serviceSupabase
+      .from("teachers")
+      .update({ name, user_id: authUserId })
+      .eq("id", existing.id)
+  } else {
     const { error: dbError } = await serviceSupabase.from("teachers").insert({
       name,
       email,
+      user_id: authUserId,
       role: "teacher",
       active: true,
     })
-    if (dbError) {
-      return NextResponse.json({ error: dbError.message }, { status: 500 })
-    }
+    if (dbError) return NextResponse.json({ error: dbError.message }, { status: 500 })
   }
 
   return NextResponse.json({ success: true })
