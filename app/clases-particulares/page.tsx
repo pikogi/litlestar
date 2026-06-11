@@ -3,6 +3,8 @@ import { supabase } from "@/lib/supabase"
 import { Shield, Star } from "lucide-react"
 import Link from "next/link"
 
+export const dynamic = "force-dynamic"
+
 export const metadata = {
   title: "Clases Particulares de Inglés para Niños | Little Star",
   description:
