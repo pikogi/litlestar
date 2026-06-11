@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/reveal"
 import { Star } from "lucide-react"
-import Image from "next/image"
 import { supabase } from "@/lib/supabase"
 
 const FALLBACK_MEDIA: Record<string, { video?: string; poster: string }> = {
@@ -64,12 +63,11 @@ export async function TeachersSection() {
                     </video>
                   </div>
                 ) : teacher.poster ? (
-                  <div className="relative w-full aspect-square">
-                    <Image
+                  <div className="w-full aspect-square">
+                    <img
                       src={teacher.poster}
                       alt={teacher.name}
-                      fill
-                      className="object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 ) : (
