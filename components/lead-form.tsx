@@ -38,8 +38,8 @@ const PLANS = [
   {
     id: "trimestral" as Plan,
     name: "Plan Trimestral",
-    price: "$60.000/mes",
-    note: "3 meses pagados juntos · Ahorrás $60.000",
+    price: "$70.000/mes",
+    note: "3 meses pagados juntos · Ahorrás $30.000",
     badge: "Mejor precio",
     badgeClass: "bg-primary text-primary-foreground",
   },
@@ -65,7 +65,7 @@ const TOTAL_STEPS = 5
 
 function buildWAMessage(data: FormData): string {
   const planLabels: Record<NonNullable<Plan>, string> = {
-    trimestral: "Trimestral ($60.000/mes)",
+    trimestral: "Trimestral ($70.000/mes)",
     mensual: "Mensual ($80.000/mes)",
     personalizado: "Personalizado (1 a 1)",
   }
@@ -246,7 +246,7 @@ function LeadFormInner() {
             {[
               { Icon: Users, label: "Grupos de 5", sub: "máx. por clase" },
               { Icon: Clock, label: "50 minutos", sub: "por sesión" },
-              { Icon: BookOpen, label: "Portal educativo", sub: "videos y tareas" },
+              { Icon: BookOpen, label: "Clases grabadas", sub: "para repasar" },
             ].map(({ Icon, label, sub }) => (
               <div key={label} className="bg-primary/5 rounded-2xl p-3 text-center">
                 <Icon className="w-5 h-5 text-primary mx-auto mb-1.5" />

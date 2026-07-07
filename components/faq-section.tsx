@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "¿Cuál es la diferencia entre el plan trimestral y el mensual?",
-    answer: "El plan trimestral tiene un costo total de $195.000 (3 meses pagados juntos), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $45.000.",
+    answer: "El plan trimestral tiene un costo total de $210.000 (3 meses pagados juntos), mientras que el plan mensual cuesta $80.000 por mes sin compromiso. El plan trimestral te permite ahorrar $30.000.",
   },
   {
     question: "¿Qué pasa si inscribo a 2 hijos?",

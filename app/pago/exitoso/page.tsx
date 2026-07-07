@@ -13,7 +13,7 @@ const PLAN_LABELS: Record<string, string> = {
 }
 
 const PLAN_PRICES: Record<string, number> = {
-  trimestral: 180000,
+  trimestral: 210000,
   mensual: 80000,
   personalizado: 100000,
 }

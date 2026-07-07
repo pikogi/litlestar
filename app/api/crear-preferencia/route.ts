@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 const PLANES: Record<string, { title: string; unit_price: number }> = {
   trimestral: {
     title: "Plan Trimestral - Little Star",
-    unit_price: 180000,
+    unit_price: 210000,
   },
   mensual: {
     title: "Plan Mensual - Little Star",

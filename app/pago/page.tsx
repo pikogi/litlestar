@@ -9,9 +9,9 @@ const PLANES = [
   {
     id: "trimestral",
     name: "Plan Trimestral",
-    price: "$180.000",
+    price: "$210.000",
     period: "pago único por 3 meses",
-    savings: "Ahorrás $60.000",
+    savings: "Ahorrás $30.000",
     badge: "Mejor precio",
     badgeClass: "bg-primary text-primary-foreground",
     highlight: true,
