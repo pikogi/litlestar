@@ -148,7 +148,9 @@ export async function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-3xl font-extrabold text-foreground">{pricing.custom.amount}</span>
+                  <span className={`font-extrabold text-foreground ${pricing.custom.currency ? "text-5xl" : "text-3xl"}`}>
+                    {pricing.custom.amount}
+                  </span>
                   {pricing.custom.currency && (
                     <span className="text-lg text-muted-foreground font-semibold">{pricing.custom.currency}</span>
                   )}
