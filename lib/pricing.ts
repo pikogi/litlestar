@@ -4,15 +4,18 @@ export type CurrencyCode = "ARS" | "USD" | "MXN"
 
 export type PricingData = {
   quarterly: {
-    price: string
+    amount: string
+    currency: string
     totalNote: string
     savings: string
   }
   monthly: {
-    price: string
+    amount: string
+    currency: string
   }
   custom: {
-    price: string
+    amount: string
+    currency: string
     note: string
     cta: string
   }
@@ -24,45 +27,54 @@ export type PricingData = {
 const PRICING: Record<CurrencyCode, PricingData> = {
   ARS: {
     quarterly: {
-      price: "$70.000",
+      amount: "$70.000",
+      currency: "",
       totalNote: "Total: $210.000 por 3 meses",
       savings: "Ahorra $30.000",
     },
     monthly: {
-      price: "$80.000",
+      amount: "$80.000",
+      currency: "",
     },
     custom: {
-      price: "A presupuestar",
+      amount: "A presupuestar",
+      currency: "",
       note: "Precio según frecuencia y cantidad de clases",
       cta: "Pedir presupuesto",
     },
   },
   USD: {
     quarterly: {
-      price: "$79 USD",
+      amount: "$79",
+      currency: "USD",
       totalNote: "Total: $237 USD por 3 meses",
       savings: "Ahorra $60 USD",
     },
     monthly: {
-      price: "$99 USD",
+      amount: "$99",
+      currency: "USD",
     },
     custom: {
-      price: "$20 USD",
+      amount: "$20",
+      currency: "USD",
       note: "Por clase individual",
       cta: "Reservar clase particular",
     },
   },
   MXN: {
     quarterly: {
-      price: "$1.370 MXN",
+      amount: "$1.370",
+      currency: "MXN",
       totalNote: "Total: $4.110 MXN por 3 meses",
       savings: "Ahorra $1.035 MXN",
     },
     monthly: {
-      price: "$1.715 MXN",
+      amount: "$1.715",
+      currency: "MXN",
     },
     custom: {
-      price: "$345 MXN",
+      amount: "$345",
+      currency: "MXN",
       note: "Por clase individual",
       cta: "Reservar clase particular",
     },

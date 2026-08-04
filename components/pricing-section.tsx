@@ -64,8 +64,10 @@ export async function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">{pricing.quarterly.price}</span>
-                  <span className="text-lg text-muted-foreground font-semibold">/mes</span>
+                  <span className="text-5xl font-extrabold text-foreground">{pricing.quarterly.amount}</span>
+                  <span className="text-lg text-muted-foreground font-semibold">
+                    {pricing.quarterly.currency && `${pricing.quarterly.currency} `}/mes
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
                   {pricing.quarterly.totalNote}
@@ -102,8 +104,10 @@ export async function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">{pricing.monthly.price}</span>
-                  <span className="text-lg text-muted-foreground font-semibold">/mes</span>
+                  <span className="text-5xl font-extrabold text-foreground">{pricing.monthly.amount}</span>
+                  <span className="text-lg text-muted-foreground font-semibold">
+                    {pricing.monthly.currency && `${pricing.monthly.currency} `}/mes
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
                   Facturado mensualmente
@@ -144,7 +148,10 @@ export async function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-3xl font-extrabold text-foreground">{pricing.custom.price}</span>
+                  <span className="text-3xl font-extrabold text-foreground">{pricing.custom.amount}</span>
+                  {pricing.custom.currency && (
+                    <span className="text-lg text-muted-foreground font-semibold">{pricing.custom.currency}</span>
+                  )}
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
                   {pricing.custom.note}
