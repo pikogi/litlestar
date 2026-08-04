@@ -2,6 +2,7 @@ import { Check, Star, Users, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Reveal } from "@/components/reveal"
+import { getPricingForVisitor } from "@/lib/pricing"
 
 const includedBase = [
   "Clases en vivo de 50 minutos",
@@ -24,7 +25,9 @@ const includedPersonalizado = [
 ]
 
 
-export function PricingSection() {
+export async function PricingSection() {
+  const pricing = await getPricingForVisitor()
+
   return (
     <section id="precios" className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -61,14 +64,14 @@ export function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">$70.000</span>
+                  <span className="text-5xl font-extrabold text-foreground">{pricing.quarterly.price}</span>
                   <span className="text-lg text-muted-foreground font-semibold">/mes</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Total: <span className="font-bold text-foreground">$210.000</span> por 3 meses
+                  {pricing.quarterly.totalNote}
                 </p>
                 <div className="inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full bg-accent/30 text-accent-foreground text-sm font-bold">
-                  Ahorra $30.000
+                  {pricing.quarterly.savings}
                 </div>
               </div>
             </div>
@@ -99,7 +102,7 @@ export function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-extrabold text-foreground">$80.000</span>
+                  <span className="text-5xl font-extrabold text-foreground">{pricing.monthly.price}</span>
                   <span className="text-lg text-muted-foreground font-semibold">/mes</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
@@ -141,10 +144,10 @@ export function PricingSection() {
 
               <div className="mt-6">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-3xl font-extrabold text-foreground">A presupuestar</span>
+                  <span className="text-3xl font-extrabold text-foreground">{pricing.custom.price}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Precio según frecuencia y cantidad de clases
+                  {pricing.custom.note}
                 </p>
               </div>
             </div>
@@ -160,7 +163,7 @@ export function PricingSection() {
 
             <Button size="lg" className="mt-8 w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold py-6 rounded-xl text-base" asChild>
               <Link href="/inscripcion?plan=personalizado">
-                Pedir presupuesto
+                {pricing.custom.cta}
               </Link>
             </Button>
           </div>
